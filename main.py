@@ -46,7 +46,8 @@ def main():
             # Encode the message using variation selectors
             encoded_message = encode_message_to_vs(text_input)
             # Show the encoded emoji with variation selectors
-            st.write(f"Encoded emoji with variation selectors: {emoji_input + encoded_message}")
+            Path = f"Encoded emoji with variation selectors: {emoji_input + encoded_message}"
+            st.code(Path, language="python")
         else:
             st.write("Please enter some text to encode.")
 
@@ -54,7 +55,8 @@ def main():
         if emoji_input:
             # Extract the variation selectors part (after the emoji) and decode it
             decoded_text = decode_vs_to_message(emoji_input[1:])
-            st.write(f"Decoded message: {decoded_text}")
+            Path = f"Decoded message: {decoded_text}"
+            st.code(Path, language="python")
         else:
             st.write("Please enter an emoji to decode.")
 
